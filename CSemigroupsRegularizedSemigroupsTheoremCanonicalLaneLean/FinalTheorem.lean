@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CSemigroupsRegularizedSemigroupsTheoremCanonicalLaneLean.SemigroupDefinitions
+import HautevilleHouse.CSemigroupsRegularizedSemigroupsTheoremCanonicalLaneLean.RegularizedSemigroup
+import HautevilleHouse.CSemigroupsRegularizedSemigroupsTheoremCanonicalLaneLean.Generator
+import HautevilleHouse.CSemigroupsRegularizedSemigroupsTheoremCanonicalLaneLean.CauchyProblem
+
+namespace HautevilleHouse
+namespace CSemigroupsRegularizedSemigroupsTheoremCanonicalLaneLean
+
+def ConstrainedCSemigroupsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_c_semigroups_endgame (A : AdmissibleClass) : ConstrainedCSemigroupsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CSemigroupsRegularizedSemigroupsTheoremCanonicalLaneLean
+end HautevilleHouse
